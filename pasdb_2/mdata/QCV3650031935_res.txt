@@ -1,0 +1,7 @@
+baseline file name: QCV3650031935
+number of rf steps: 501
+qmeter card number: 2
+daq gain setting: 1
+tune voltage: 1.599
+phase voltage: 1.09
+attenuation setting: 5

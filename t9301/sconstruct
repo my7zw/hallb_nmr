@@ -1,0 +1,25 @@
+import os
+
+v = Variables(None, ARGUMENTS)
+v.Add(BoolVariable('buildlib', 'Set to 1 to build lib', 0))
+
+env = Environment(TOPDIR = os.environ['TOPDIR'], variables=v)
+env.Append(CCFLAGS = '-Wall -Wextra -O3 -m64')
+env.Append(LIBS=['grupd'], LIBPATH=['$TOPDIR/lib'], CPPPATH=['$TOPDIR/include'])
+env.Append(LIBS=['TreePlayer','Spectrum'])
+env.ParseConfig("root-config --cflags --libs --glibs")
+
+
+Export('env')
+
+projdir = '$TOPDIR/build/' + os.path.basename(os.getcwd()) + '/'
+objs=[]
+for top, dirs, files in os.walk('.'):
+  for subdir in dirs:
+    sn = os.path.join(top, subdir,'scon_sub')
+    if os.path.exists(sn):
+     o = env.SConscript(sn, variant_dir=projdir+subdir, src_dir=subdir, duplicate=0)
+     objs.append(o)
+
+env.SConscript('scon_top', exports='objs', variant_dir=projdir, src_dir='.', duplicate=0)
+Help(v.GenerateHelpText(env))

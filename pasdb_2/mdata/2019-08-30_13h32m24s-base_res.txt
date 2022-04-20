@@ -1,0 +1,4 @@
+baseline file name: 2019-08-30_13h32m24s-base
+number of rf steps: 500
+qmeter card number: 2
+daq gain setting: 0

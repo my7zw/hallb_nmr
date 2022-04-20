@@ -1,0 +1,18 @@
+Import('env')
+subobj = []
+instdir = '$TOPDIR/include'
+
+if env['buildlib']:
+    for ccname in Glob('*.cc'):
+        oo =  env.SharedObject(ccname)
+        subobj.append(oo)
+    env.Install(instdir,Glob('*.hh'))
+    env.Alias('install',instdir)
+    env.Default('install')
+
+else: 
+    for ccname in Glob('*.cc'):
+        oo =  env.Object(ccname)
+        subobj.append(oo)
+
+Return('subobj')

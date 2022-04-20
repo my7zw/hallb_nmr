@@ -1,0 +1,36 @@
+1.  Run comment
+2.  Q curve filename
+3.  Q Comment
+4.  TEQ curve filename
+5.  TEQ comment
+6
+7
+8
+9.  python low
+10  python high
+11. Time (f.p. high piece)
+12. Time (f.p. low piece)
+13. Center frequency (MHz)
+14. Frequency step size (MHz)
+15. Number of frequency steps
+16. Sweep number
+17. Temp (deg C)
+18. 3.3 V readback
+19. Tune voltage
+20. Offset voltage
+21. Phase voltage
+22. Peak area (mv-MHz)
+23. Q curve amplitude
+24. Polarization calibration constant
+25. Gain setting(0=low, 1=hi ,2=max)
+26. Invert polarity (0=false, 1=true)
+27. IF/LOG output (0=IF, 1=LOG)
+28. Peak amp (V)
+29. NMR channel
+30. Peak center (MHz)
+31. Beam on/off
+32. RF level (dBm)
+33. IF atten (dB)
+34. LHe temp (K)
+35. LHe pressure (torr)
+
